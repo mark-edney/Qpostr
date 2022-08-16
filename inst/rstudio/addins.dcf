@@ -1,0 +1,4 @@
+Name: Quarto Blog Post
+Description: Creates a new Quarto Blog post from template
+Binding: QGadget
+Interactive: true

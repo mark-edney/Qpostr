@@ -1,0 +1,10 @@
+Package: Qpostr
+Type: Package
+Title: Create a Quarto Blog Post
+Version: 0.1.0
+Author: Mark Edney
+Maintainer: Mark Edney <m2edney@gmail.com>
+Description: This packake is used to create a addin for creating a new Quarto blog post. This post is created using a default template using the whisker pakage. A Shiny gadget is utilized to get user input prior to the creataion of the blog post. 
+License: Creative Commons Attribution-NonCommercial-NoDerivs 3.0 United States License
+Encoding: UTF-8
+LazyData: true
