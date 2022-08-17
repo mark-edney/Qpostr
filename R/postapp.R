@@ -2,8 +2,8 @@ QGadget <- function() {
   ui <- miniUI::miniPage(
     miniUI::gadgetTitleBar("Quarto Blog Post"),
     miniUI::miniContentPanel(
-      textInput("title", "Title", placeholder = "Post Title"),
-      textInput("author", "Author", placeholder = "")
+      shiny::textInput("title", "Title", placeholder = "Post Title"),
+      shiny::textInput("author", "Author", placeholder = "")
 
     )
   )
@@ -15,7 +15,7 @@ QGadget <- function() {
     })
   }
 
-  shiny::runGadget(ui, server, viewer = dialogViewer("Quarto Blog Post"))
+  shiny::runGadget(ui, server, viewer = shiny::dialogViewer("Quarto Blog Post"))
 }
 
 Blog_post <- function(title, author){
@@ -26,7 +26,7 @@ Blog_post <- function(title, author){
                draft = 'true',
                description = "''",
                image = "''",
-               archives = format(date, "%Y/%m"),
+               archives = format(Sys.Date(), "%Y/%m"),
                toc = 'false',
                fold = "show",
                tools = 'true',
