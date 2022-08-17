@@ -1,11 +1,7 @@
 QGadget <- function() {
-  library(shiny)
-  library(miniUI)
-
-  ui <- miniPage(
-    gadgetTitleBar("Quarto Blog Post"),
-    miniContentPanel(
-      # Define layout, inputs, outputs
+  ui <- miniUI::miniPage(
+    miniUI::gadgetTitleBar("Quarto Blog Post"),
+    miniUI::miniContentPanel(
       textInput("title", "Title", placeholder = "Post Title"),
       textInput("author", "Author", placeholder = "")
 
@@ -13,16 +9,13 @@ QGadget <- function() {
   )
 
   server <- function(input, output, session) {
-    # Define reactive expressions, outputs, etc.
-
-    # When the Done button is clicked, return a value
-    observeEvent(input$done, {
+    shiny::observeEvent(input$done, {
       Blog_post(input$title, input$author)
       stopApp("Post Created")
     })
   }
 
-  runGadget(ui, server, viewer = dialogViewer("Quarto Blog Post"))
+  shiny::runGadget(ui, server, viewer = dialogViewer("Quarto Blog Post"))
 }
 
 Blog_post <- function(title, author){
@@ -30,7 +23,7 @@ Blog_post <- function(title, author){
                author = author,
                date = Sys.Date(),
                categories = list("How-to", "R", "Rmarkdown"),
-               draft = FALSE,
+               draft = 'true',
                description = "''",
                image = "''",
                archives = format(date, "%Y/%m"),

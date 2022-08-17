@@ -1,5 +1,5 @@
 \name{QGadget}
-\alias{hello}
+\alias{QGadget}
 \title{Create a Qaurto Blog Post}
 \usage{
 Qgadget()
